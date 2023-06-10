@@ -1,1 +1,1 @@
-if(getCookie("flag") !="true"){location.href="login.html";}
+if(getCookie("flag") !="true"){location.href="index.html";}

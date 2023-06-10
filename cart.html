@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CIS385 PROJECT SAMPLE</title>
+  <style>
+	  th{text-align:left;}
+	   td{border-bottom:solid black 1px}
+	  input[type='text']{width:50px;}
+ </style>
+   
+  <script src="js/cookiemanager.js" ></script>
+  <script src="js/validation.js"></script> 
+  <script src="js/catalog.js" ></script>
+  
+  <script>
+  function delete2(code)
+  {
+	  let x=new ShoppingCart(getCookie('whoami'));
+	  x.setNumOrdered(code,0); 
+	  location.reload();
+  }
+  function update(code)
+  {
+	var name=code+"qty";
+	value=parseInt(document.getElementById(name).value);
+	let x=new ShoppingCart(getCookie('whoami'));
+	x.setNumOrdered(code,value);
+	//x.storeCart();
+	location.reload();
+  }
+  function createCart()
+  {  
+	var flag2=false;
+	var total=0;
+	var str="<table>";
+	str+="<tr><th colspan='2'>NAME</th><th>QUANTITY</th><th>PRICE</th><th>SUBTOTAL</th>";
+	let x=new ShoppingCart(getCookie('whoami'));
+	let items=x.getItemsOrdered();
+	for(let i=0;i<items.length;i++)
+	{
+		let qty		=items[i].getNumItems();	
+		if(qty !=null)
+		{	
+			var name=items[i].getItemCode()+"qty";
+			var image=items[i].getItemImage();
+			
+			str+="<tr>";
+			str+="<td style='text-align:left'>"+"<img width='100px' src='images/"+image+"' />"+"</td>";
+			str+="<td style='text-align:left'>"+items[i].getItemName()+"</td>";
+			str+="<td style='text-align:right'>"+"<input id='"+name+"'type='text' value='"+qty+"' />"+
+			"<input id='"+items[i].getItemCode()+"' type='button' value='update' onclick='update(this.id);' />"+
+			"<img src='images/x.png' width='20px;' onclick=delete2('"+items[i].getItemCode()+"') /></td>";
+			str+="<td style='text-align:right'>$"+items[i].getUnitCost()+"</td>";
+			str+="<td style='text-align:right'>$"+items[i].getTotalCost()+"</td>";
+			str+="</tr>";
+			flag2=true;
+		}		
+	}
+	str+="<tr><td colspan='4' style='text-align:left'>TOTAL</td><td style='text-align:right'>$"+x.getTotalCost()+"</td></tr>";
+	str+="</table>";
+	if(flag2)
+	{
+		document.getElementById("info").innerHTML=str;
+		document.getElementById("info2").innerHTML="<a href='shipping.html'>Shipping Next</a>";
+	}
+	else 
+	{
+		document.getElementById("info").innerHTML="<h1>EMPTY CART<br><a href='products.html'>Go Back Shopping</a></h1>";
+	}	
+  }
+  </script>
+
+<style>
+	body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+    background-color: gainsboro;
+    font-family: Garamond, serif;
+    }
+    .nav {
+        width: 100%;
+        background:black;
+        color:white;
+        height: 110px;
+        padding: 20px 0 5px 0;
+        border-bottom: solid 8px black;
+        box-shadow: 10px 10px 10px grey;
+        position: absolute;
+        top: 0;
+    }
+    .footer {
+    width: 100%;
+    height: 25px;
+    padding: 20px 0 5px 0;
+    background-color:black;
+    color:silver;
+    bottom: 0;}
+  
+    .nav-align {
+        text-align: center;
+        padding: 3px 0
+    }
+    .button {
+        background-color: rgb(92, 87, 87);
+        padding: 0.3vw 3vw;
+        border-radius: 2px;
+        cursor: pointer;
+        display: inline-block;
+        color: #fff;
+    }
+    .button:hover 
+    {
+        background-color: darkgray;
+        color: black;
+    }
+    .title {
+        color:silver;
+        margin: 0;
+        /*font-family: "";*/
+        text-transform: uppercase;
+        font-size: xx-large;
+    }
+    .line{
+        border-top:9px solid black;
+        border-radius:10px;
+        width:965px;
+      }
+
+</style>
+</head>
+
+<body onload="createCart();">
+
+<!--Menu bar starts here-->
+<div class="nav"> 
+	<div>
+		<h1 class="title" ><center>Westcoast Classics</center></h1> <!--style="font-family:cursive"-->
+	</div>
+	<div>
+		<center>
+			<script src="js/menu.js"> </script> <!--this shows the menu bar at the top, and makes it functional when you click each different tab in the menu-->
+		</center>
+	</div>
+</div>
+<br><br><br><br><br><br><br><br><br>
+<div id="content" class="contentSection"> 
+
+<div id="info"></div>
+<div id="info2"></div>
+</div>
+<!--bottom border starts here-->
+<div class="footer">
+	<div style="text-align: center;">
+		<center><strong>&copy; 2023 Westcoast Classics</strong></center>
+	</div> 
+</div>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CIS385 PROJECT SAMPLE</title>
+  <script src="js/cookiemanager.js" ></script>
+  <script src="js/validation.js"></script>
+  <script src="js/catalog.js" ></script>
+  <link rel="stylesheet" href="westcoast.css"><!--link to css file-->
+   
+</head>
+
+
+<body>
+<!--Menu bar starts here-->
+<div class="nav" > 
+	<div>
+		<h1 class="title" ><center>Westcoast Classics</center></h1> <!--style="font-family:cursive"-->
+	</div>
+	<div>
+		<center>
+			<script src="js/menu.js"> </script> <!--this shows the menu bar at the top, and makes it functional when you click each different tab in the menu-->
+		</center>
+	</div>
+</div>
+<br><br><br><br><br><br><br><br>
+
+
+<div id="content" class="contentSection"> 
+  <center>
+    <h1>Limited Time Products</h1>
+  </center>
+    <br><br><br>
+
+
+
+<!---------------------------------------------------------------------------------------------------------->
+<!--products listed start here-->
+ <center>
+  <!--porshe 911-->
+<div style="border:solid white 2.5px;width:430px;">
+   <script>var c=new Catalog();document.writeln((c.getItem('porshe')).name+"<img src='images/"+(c.getItem('porshe')).image+"' width='400px'></img>"); </script>
+   <br>
+   <a href="porshe.html"> a closer look </a><br>
+   
+<input type="button" value="Add To Cart" 
+onclick="let x1=new ShoppingCart(getCookie('whoami'));x1.addItem('porshe');alert('2023 Porshe 911 Carrera S Added to cart ...');"  />
+</div>
+<br>
+
+<!--bently GT continental-->
+<div style="border:solid white 2.5px;width:430px;">
+  <script>var c=new Catalog();document.writeln((c.getItem('bentley')).name+"<img src='images/"+(c.getItem('bentley')).image+"' width='400px'></img>"); </script>
+  <br>
+  <a href="bentley.html">a closer look</a><br>
+  <input type="button" value="Add To Cart"
+  onclick="let x2=new ShoppingCart(getCookie('whoami'));x2.addItem('bentley');alert('2020 Bentley Continental GT sport coupe Added to cart ...');"/>
+  <br>
+</div>
+<br>
+
+<!--ford bronco-->
+<div style="border:solid white 2.5px;width:430px;">
+  <script>var c=new Catalog();document.writeln((c.getItem('bronco')).name+"<img src='images/"+(c.getItem('bronco')).image+"' width='400px'></img>"); </script>
+  <br>
+  <a href="bronco.html">a closer look</a><br>
+  <input type="button" value="Add To Cart"
+  onclick="let x3=new ShoppingCart(getCookie('whoami'));x3.addItem('bronco');alert('2023 Ford Bronco Added to cart ...');"/>
+  <br>
+</div>
+<br>
+
+<!--corvette-->
+<div style="border:solid white 2.5px;width:430px;">
+  <script>var c=new Catalog();document.writeln((c.getItem('corvette')).name+"<img src='images/"+(c.getItem('corvette')).image+"' width='400px'></img>"); </script>
+  <br>
+  <a href="corvette.html">a closer look</a><br>
+  <input type="button" value="Add To Cart"
+  onclick="let x4=new ShoppingCart(getCookie('whoami'));x4.addItem('corvette');alert('1969 Vintage Chevrolet Corvette Stingray Added to cart ...');"/>
+  <br>
+</div>
+<br>
+
+<!--koenigsegg-->
+<div style="border:solid white 2.5px;width:430px;">
+  <script>var c=new Catalog();document.writeln((c.getItem('keon')).name+"<img src='images/"+(c.getItem('keon')).image+"' width='400px'></img>"); </script>
+  <br>
+  <a href="keon.html">a closer look</a><br>
+  <input type="button" value="Add To Cart"
+  onclick="let x5=new ShoppingCart(getCookie('whoami'));x5.addItem('keon');alert('2020 Koenigsegg Regera Added to cart ...');"/>
+  <br>
+</div>
+<br>
+
+<!--rolls-royce-->
+<div style="border:solid white 2.5px;width:430px;">
+  <script>var c=new Catalog();document.writeln((c.getItem('rolls')).name+"<img src='images/"+(c.getItem('rolls')).image+"' width='400px'></img>"); </script>
+  <br>
+  <a href="rolls.html">a closer look</a><br>
+  <input type="button" value="Add To Cart"
+  onclick="let x6=new ShoppingCart(getCookie('whoami'));x6.addItem('rolls');alert('2023 Rolls-Royce Black Badge Ghost Added to cart ...');"/>
+  <br>
+</div>
+<br>
+
+<!--McLaren-->
+<div style="border:solid white 2.5px;width:430px;">
+  <script>var c=new Catalog();document.writeln((c.getItem('mclaren')).name+"<img src='images/"+(c.getItem('mclaren')).image+"' width='400px'></img>"); </script>
+  <br>
+  <a href="mclaren.html">a closer look</a><br>
+  <input type="button" value="Add To Cart"
+  onclick="let x7=new ShoppingCart(getCookie('whoami'));x7.addItem('mclaren');alert('2022 Special Edition McLaren 720S Added to cart ...');"/>
+  <br>
+</div>
+<br>
+
+<!--pagani-->
+<div style="border:solid white 2.5px;width:430px;">
+  <script>var c=new Catalog();document.writeln((c.getItem('pagani')).name+"<img src='images/"+(c.getItem('pagani')).image+"' width='400px'></img>"); </script>
+  <br>
+  <a href="pagani.html">a closer look</a><br>
+  <input type="button" value="Add To Cart"
+  onclick="let x8=new ShoppingCart(getCookie('whoami'));x8.addItem('pagani');alert('2023 One-Of-A-Kind Pagani Huayra Dinamica Evo Added to cart ...');"/>
+  <br>
+</div>
+<br>
+
+<!--g-wagon-->
+<div style="border:solid white 2.5px;width:430px;">
+  <script>var c=new Catalog();document.writeln((c.getItem('gwagon')).name+"<img src='images/"+(c.getItem('gwagon')).image+"' width='400px'></img>"); </script>
+  <br>
+  <a href="gwagon.html">a closer look</a><br>
+  <input type="button" value="Add To Cart"
+  onclick="let x9=new ShoppingCart(getCookie('whoami'));x9.addItem('gwagon');alert('2019 Mercedes-AMG G63 Added to cart ...');"/>
+  <br>
+</div>
+<br>
+
+<!--ferrari-->
+<div style="border:solid white 2.5px;width:430px;">
+  <script>var c=new Catalog();document.writeln((c.getItem('ferrari')).name+"<img src='images/"+(c.getItem('ferrari')).image+"' width='400px'></img>"); </script>
+  <br>
+  <a href="ferrari.html">a closer look</a><br>
+  <input type="button" value="Add To Cart"
+  onclick="let x10=new ShoppingCart(getCookie('whoami'));x10.addItem('ferrari');alert('2022 Ferrari F8 Spider Added to cart ...');"/>
+  <br>
+</div>
+<br>
+
+<!--<a href="cart.html">PROCEED TO WEB CART<a>-->
+<p><INPUT TYPE="button"  NAME="button" Value="Go To Cart And Checkout" onclick="location.href='cart.html';"></p>
+  
+  <br><br><br><br><br>
+        <!--bottom border starts here-->
+        <div class="footer">
+            <div style="text-align: center;">
+                <center><strong>&copy; 2023 Westcoast Classics</strong></center>
+            </div> 
+        </div>
+
+</body>
+</html>

@@ -16,7 +16,7 @@ This e-commerce website has the following features:
   
 * Accessing Contact Information: Users can retrieve the contact information they need on either the contact page or the social media page.
 
-### Technologies Used:
+## Technologies Used:
 * HTML
 * Javascript
 * CSS
